@@ -17,11 +17,22 @@
         database.getDb(function (err, db) {
             if (err) {
                 next(err, null);
-            }
-            else {
-                db.categories.find({parent: null}).toArray(function(err,results){
-                   next(null, results);
+            } else {
+                db.categories.find({parent: null}).toArray(function (err, results) {
+                    next(null, results);
                 });
+            }
+        });
+    }
+
+    data.getSubCategories = function (categoryName, next) {
+        database.getDb(function (err, db) {
+            if (err) {
+                next(err, null);
+            } else {
+                db.categories.find({parent: categoryName}).toArray(function (err, results) {
+                    next(null, results);
+                })
             }
         });
     }

@@ -25,7 +25,7 @@ head
     //Theme styles END
 //Head END
 //Body BEGIN
-body.corporate
+body.corporate(ng-app="zgrabime")
     //BEGIN TOP BAR
     .pre-header
         .container
@@ -79,7 +79,7 @@ body.corporate
             //END NAVIGATION
     //Header END
     .main
-        .container
+        .container(ng-view="")
             block content
     //BEGIN PRE-FOOTER
     .pre-footer
@@ -129,10 +129,13 @@ body.corporate
                                 i.fa.fa-dropbox
                 //END PAYMENTS
     //END FOOTER
-    script(src='/assets/global/plugins/jquery-1.11.0.min.js', type='text/javascript')
-    script(src='/assets/global/plugins/jquery-migrate-1.2.1.min.js', type='text/javascript')
+    script(src='/lib/jquery/dist/jquery.min.js', type='text/javascript')
     script(src='/assets/global/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
     script(src='/assets/frontend/layout/scripts/back-to-top.js', type='text/javascript')
+    script(src='/lib/angular/angular.js',type='text/javascript')
+    script(src='/lib/angular-route/angular-route.min.js',type='text/javascript')
+    script(src='/javascripts/angular/app.js',type='text/javascript')
+
     //BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE)
     //slider for products
     //script(src='/assets/frontend/layout/scripts/layout.js', type='text/javascript')
